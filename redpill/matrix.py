@@ -21,6 +21,9 @@ class Matrix:
         row, column = index
         return self.data[row][column]
 
+    def __setitem__(self, index, value):
+        row, column = index
+        self.data[row][column] = value
 
     def __str__(self):
         rows = []
