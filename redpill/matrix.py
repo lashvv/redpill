@@ -25,6 +25,23 @@ class Matrix:
         row, column = index
         self.data[row][column] = value
 
+    def shape(self):
+        return (self.rows, self.columns)
+
+    def __eq__(self, other):
+        if not isinstance(other, Matrix):
+            return False
+
+        if self.shape() != other.shape():
+            return False
+
+        for i in range(self.rows):
+            for j in range(self.columns):
+                if self.data[i][j] != other.data[i][j]:
+                    return False
+        
+        return True
+
     def __str__(self):
         rows = []
 
@@ -35,6 +52,12 @@ class Matrix:
         return "\n".join(rows)
 
 # A = Matrix([
+#     [1,2,3],
+#     [4,5,6],
+#     [7,8,9]
+# ])
+
+# B = Matrix([
 #     [1,2,3],
 #     [4,5,6],
 #     [7,8,9]
