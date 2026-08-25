@@ -17,6 +17,11 @@ class Matrix:
         if len(self.data) == 0 or len(self.data[0]) == 0:
             raise ValueError("Matrix cannot be empty.")
 
+    def __getitem__(self, index):
+        row, column = index
+        return self.data[row][column]
+
+
     def __str__(self):
         rows = []
 
@@ -25,3 +30,9 @@ class Matrix:
             rows.append(f"[{row_string}]")
 
         return "\n".join(rows)
+
+# A = Matrix([
+#     [1,2,3],
+#     [4,5,6],
+#     [7,8,9]
+# ])
