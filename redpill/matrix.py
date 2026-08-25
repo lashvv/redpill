@@ -16,3 +16,12 @@ class Matrix:
     def is_empty(self):
         if len(self.data) == 0 or len(self.data[0]) == 0:
             raise ValueError("Matrix cannot be empty.")
+
+    def __str__(self):
+        rows = []
+
+        for row in self.data:
+            row_string = " ".join(str(value) for value in row)
+            rows.append(f"[{row_string}]")
+
+        return "\n".join(rows)
