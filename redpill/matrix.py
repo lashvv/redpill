@@ -58,6 +58,22 @@ class Matrix:
 
         return Matrix(result_data)
 
+    def __sub__(self, other):
+        if not isinstance(other, Matrix):
+            raise ValueError("Can only subtract another Matrix.")
+
+        if self.shape() != other.shape():
+            raise ValueError("Matrices must have the same dimensions for subtraction.")
+
+        result_data = []
+        for i in range(self.rows):
+            row = []
+            for j in range(self.columns):
+                row.append(self.data[i][j] - other.data[i][j])
+            result_data.append(row)
+
+        return Matrix(result_data)
+
     def __str__(self):
         rows = []
 
