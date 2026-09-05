@@ -87,6 +87,9 @@ class Matrix:
 
         return Matrix(result_data)
 
+    def __rmul__(self, scalar):
+        return self * scalar
+
     def __str__(self):
         rows = []
 
