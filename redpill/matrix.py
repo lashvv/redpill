@@ -74,6 +74,19 @@ class Matrix:
 
         return Matrix(result_data)
 
+    def __mul__(self, scalar):
+        if not isinstance(scalar, (int, float)):
+            raise ValueError("Can only multiply by a scalar")
+
+        result_data = []
+        for i in range(self.rows):
+            rows = []
+            for j in range(self.columns):
+                rows.append(self.data[i][j] * scalar)
+            result_data.append(rows)
+
+        return Matrix(result_data)
+
     def __str__(self):
         rows = []
 
