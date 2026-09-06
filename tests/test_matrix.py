@@ -9,6 +9,11 @@ def test_validation():
             [7, 8]
         ])
 
+def test_empty():
+    with pytest.raises(ValueError, match="Matrix cannot be empty."):
+        Matrix([])
+
+
 
 def test_addition():
     A = Matrix([
