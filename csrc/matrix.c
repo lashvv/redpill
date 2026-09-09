@@ -14,18 +14,18 @@ Matrix *matrix_create(size_t rows, size_t columns)
 
     if (matrix->data == NULL)
     {
-        free(Matrix);
-        return NULL
-    }
-
-    return matrix
-
-    void matrix_free(Matrix *matrix)
-    {
-        if (matrix == NULL)
-            return;
-
-        free(matrix->data);
         free(matrix);
+        return NULL;
     }
+
+    return matrix;
+}
+
+void matrix_free(Matrix *matrix)
+{
+    if (matrix == NULL)
+        return;
+
+    free(matrix->data);
+    free(matrix);
 }

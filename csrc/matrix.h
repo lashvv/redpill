@@ -1,7 +1,7 @@
 #ifndef REDPILL_MATRIX_H
 #define REDPILL_MATRIX_H
 
-#include <stddef>
+#include <stddef.h>
 
 typedef struct {
     double *data;
