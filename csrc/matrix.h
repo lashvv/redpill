@@ -10,3 +10,6 @@ typedef struct {
 } Matrix;
 
 #endif
+
+Matrix *matrix_create(size_t rows, size_t columns);
+void matrix_free(Matrix *matrix);
